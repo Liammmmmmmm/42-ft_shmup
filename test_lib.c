@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/23 18:28:39 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/23 18:35:53 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,8 @@ void	print_shoots(WINDOW *game, t_list *shoots)
 		mvwprintw(game, shoot->posY, shoot->posX - 1, " ");
 		mvwprintw(game, shoot->posY, shoot->posX, "(==)");
 		temp = temp->next;
+		if (temp)
+			shoot = temp->content;
 	}
 }
 
