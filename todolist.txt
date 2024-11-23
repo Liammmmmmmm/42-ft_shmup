@@ -1,0 +1,5 @@
+Si on a le temps :
+	2 deplacements a la fois
+	obstacles
+	enemis speciaux
+	attaques chargees
