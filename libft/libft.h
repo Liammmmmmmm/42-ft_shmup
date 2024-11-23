@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:01:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/23 14:43:41 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/23 17:05:46 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -616,7 +616,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
  * @param lst The element to free.
  * @param del A function pointer that deletes the content of the element.
  */
-void	ft_lstdelone(t_list **first, t_list *lst, void (*del)(void*));
+void	ft_lstdelone(t_list **first, t_list *lst);
 
 /**
  * @brief Clears the entire list by freeing all elements.

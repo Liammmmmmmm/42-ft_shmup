@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/23 15:19:31 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/23 18:28:39 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,23 @@ int		shoot_check(t_shoot *shoot, int cols)
 				return (1);
 		return (0);
 }
-void	move_shoot(t_list *shoot, int cols, t_list **frst_shoot)
+
+void	move_shoot(t_list *shoot, int cols, t_list **frst_shoot, WINDOW *game)
 {
+	if (!shoot)
+		return;
+	if (!shoot->content)
+		return;
 	t_shoot *shoot_el = shoot->content;
 	if (shoot_check(shoot->content, cols))
-		ft_lstdelone(frst_shoot, shoot, free);
+	{
+		ft_lstdelone(frst_shoot, shoot);
+		shoot = NULL;
+		printf("test %p", shoot);
+	}
 	else
 		shoot_el->posX = shoot_el->posX + 1;
+	
 }
 void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY)
 {
@@ -88,15 +98,23 @@ void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY)
 	}
 }
 
-void	upt_shoots(t_list **frst_shoot, int cols)
+void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game)
 {
-		t_list *lst = *frst_shoot;
-		while(lst)
+		if (frst_shoot)
 		{
-			move_shoot(lst, cols, frst_shoot);
-			lst = lst->next;
+			if(*frst_shoot)
+			{
+			t_list *lst = *frst_shoot;
+			t_list *next = NULL;
+			while(lst)
+			{
+				next = lst->next;
+				move_shoot(lst, cols, frst_shoot, game);
+				lst = next;
+				
+			}
+			}
 		}
-		
 }
 
 void	print_player(WINDOW *game, t_player *player)
@@ -131,16 +149,20 @@ void	print_shoots(WINDOW *game, t_list *shoots)
 	shoot = temp->content;
 	while (temp)
 	{
-		mvwprintw(game, shoot->posY, shoot->posX, "-");
+		mvwprintw(game, shoot->posY, shoot->posX - 1, " ");
+		mvwprintw(game, shoot->posY, shoot->posX, "(==)");
 		temp = temp->next;
 	}
 }
 
 void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots)
 {
-	print_player(game, player);
-	print_monsters(game, enemy_list);
-	print_shoots(game, shoots);
+	if(player)
+		print_player(game, player);
+	if(enemy_list)
+		print_monsters(game, enemy_list);
+	if(shoots)
+		print_shoots(game, shoots);
 	wrefresh(game);
 }
 
@@ -177,6 +199,7 @@ int main(void) {
 	int				input;
 	struct timespec	ts_start, ts_now;
     double			elapsed_time = 0.0;
+	int				frame_counter_shoot = 0;
 	double			enemy_spawn_timer = 0.0;
     const double	frame_time = 1.0 / 60.0;
 
@@ -219,6 +242,13 @@ int main(void) {
 			render_infos(infos, score, player);
             ts_start = ts_now;
             elapsed_time = 0.0;
+
+			frame_counter_shoot++;
+			if (frame_counter_shoot >= 2)
+			{
+				upt_shoots(&first_shoots, COLS, game);
+				frame_counter_shoot = 0;
+			}
         }
 
 		usleep(1000);
