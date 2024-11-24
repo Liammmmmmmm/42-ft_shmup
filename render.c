@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:10:29 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 09:28:09 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	print_monsters(WINDOW *game, t_list *enemy_list)
 	{
 		mvwprintw(game, enemy->posY, enemy->posX, "G");
 		temp = temp->next;
+		if (temp)
+			enemy = temp->content;
 	}
 }
 
