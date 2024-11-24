@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 18:04:33 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 18:17:58 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int main(void) {
 	
 	menu = subwin(stdscr, LINES, COLS, 0, 0);
 	int		clignote = 0;
-	char	*listPerso = " #>O@K&☺ ";
+	char	*listPerso = " #>O@K&$ ";
 	int		selected_char = 4;
 	while (running)
 	{
@@ -137,10 +137,12 @@ int main(void) {
 				running = 0;
 			}
 			else if (input == KEY_LEFT) {
-				running = 0;
+				if (selected_char > 1)
+					selected_char--;
 			}
 			else if (input == KEY_RIGHT) {
-				running = 0;
+				if (selected_char < 7)
+					selected_char++;
 			}
 		}
 		
@@ -215,7 +217,7 @@ int main(void) {
 			}
 
 			if (elapsed_time >= frame_time) {
-				render_game(game, player, enemy_list, first_shoots, first_enemy_shoot, stars, COLS);
+				render_game(game, player, enemy_list, first_shoots, first_enemy_shoot, stars, COLS, listPerso[selected_char]);
 				render_infos(infos, score, player, timer, base_munitions);
 				ts_start = ts_now;
 				elapsed_time = 0.0;

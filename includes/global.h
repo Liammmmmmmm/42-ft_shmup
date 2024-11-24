@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 17:04:00 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 18:18:16 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <unistd.h>
 # include <locale.h>
 
-# define PLAYER "@"
 # define ENEMY1 "C"
 # define ENEMY2 "C##"
 # define ENEMY3 "E"
@@ -71,7 +70,7 @@ void	upt_shoots_enemy(t_list **frst_shoot, int cols, WINDOW *game);
 /*****************************************************************************/
 
 void	show_error(char *error);
-void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, t_list *shoots_enemies, t_list *stars, int cols);
+void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, t_list *shoots_enemies, t_list *stars, int cols, char perso);
 void	render_infos(WINDOW *infos, int score, t_player *player, double timer, int base_munition);
 
 
