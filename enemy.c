@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:48:37 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 17:46:37 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,27 @@ t_enemy		*init_enemy(int win_height, int win_length, int timer)
 		return (NULL);
 	enemy->posY = rand() % (win_height - 2) + 1;
 	enemy->posX = win_length - 2;
-	enemy->pv = 1;
-	if(rand() % 10 == 0 && timer > 60)
-		enemy->type = 2;
-	else if(rand() % 3 == 0)
-		enemy->type = 3;
+	int random = rand() % 100;
+	if(random < 10 && timer > 60)
+		{
+			enemy->type = 2;
+			enemy->pv = 3;
+		}
+	else if(random < 50)
+		{
+			enemy->type = 3;
+			enemy->pv = 1;
+		}
+	else if(random < 55 && timer > 20)
+		{
+			enemy->type = 4;
+			enemy->pv = 1;
+		}
 	else
-		enemy->type = 1;
+		{
+			enemy->type = 1;
+			enemy->pv = 2;
+		}
 	return (enemy);
 }
 
@@ -47,11 +61,13 @@ void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game, int lines
 	t_enemy *enemy_el = enemies->content;
 	if (enemy_check(enemies->content))
 	{
-		if(enemy_el->type == 1 || enemy_el->type == 3)
+		if(enemy_el->type == 1 || enemy_el->type == 3 || enemy_el->type == 4)
 			mvwprintw(game, enemy_el->posY, enemy_el->posX, " ");
 		else if(enemy_el->type == 2)
+		{
 			mvwprintw(game, enemy_el->posY, enemy_el->posX, "   ");
-		ft_lstdelone(enemies_first, enemies);
+			ft_lstdelone(enemies_first, enemies);
+		}
 		enemies = NULL;
 	}
 	else
@@ -103,7 +119,17 @@ void	upt_enemies(t_list **enemies, WINDOW *game, int lines , t_list **frst_shoot
 				{
 					shoot_enemy(frst_shoot, enemy->posX, enemy->posY);
 				}
-			} else if(enemy->type == 2)
+			}else if(enemy->type == 4)
+			{
+				if (rand() % 6 == 0) // une chance sur 3 de bouger un mob
+				{
+					move_enemy(lst, enemies, game, lines);
+				}
+				else if (rand() % 5 == 0)
+				{
+					shoot_enemy(frst_shoot, enemy->posX, enemy->posY);
+				}
+			}else if(enemy->type == 2)
 			{
 				move_enemy(lst, enemies, game, lines);
 			}	

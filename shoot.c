@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:04:11 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:40:30 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 18:07:24 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,22 +81,33 @@ void	check_enemys_shoots(t_list *shoot, t_list **lst_enemys, t_list **frst_shoot
 			enemy = enemys->content;
 		if((shoot_el && enemy->posX == shoot_el->posX && enemy->posY == shoot_el->posY ))
 		{
-			ft_lstdelone(lst_enemys, enemys);
-			enemys = NULL;
-			mvwprintw(game, shoot_el->posY, shoot_el->posX - 1, "  ");
+			enemy->pv--;
+			if(enemy->pv == 0)
+			{
+				if(enemy->type == 2)
+					mvwprintw(game, shoot_el->posY, shoot_el->posX - 1, "    ");
+				else
+					mvwprintw(game, shoot_el->posY, shoot_el->posX - 1, "  ");
+				if(enemy->type == 1)
+					score++;
+				else if(enemy->type == 2)
+					score += 20;
+				else if(enemy->type == 3)
+					score += 5;
+				else if(enemy->type == 3)
+					score += 10;
+				ft_lstdelone(lst_enemys, enemys);
+				enemys = NULL;
+
+			}	
 			ft_lstdelone(frst_shoot, shoot);
 			shoot = NULL;
-			if(enemy->type == 1)
-				score++;
-			else if(enemy->type == 2)
-				score += 10;
-			else if(enemy->type == 3)
-				score += 5;
-			return ;
+			return;
 		}
 		enemys = next;
 	}
 }
+
 void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game, t_list **lst_enemys)
 {
 	if (frst_shoot && *frst_shoot)

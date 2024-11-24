@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:46:18 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 17:26:03 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,12 @@ void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
 			if (enemy->posX + 1 < cols - 1)
 				mvwprintw(game, enemy->posY, enemy->posX + 1, " ");
 			mvwprintw(game, enemy->posY, enemy->posX, ENEMY1);
+		}
+		else if (enemy->type == 4)
+		{
+			if (enemy->posX + 1 < cols - 1)
+				mvwprintw(game, enemy->posY, enemy->posX + 1, " ");
+			mvwprintw(game, enemy->posY, enemy->posX, ENEMY4);
 		}
 		wattroff(game, COLOR_PAIR(1));
 		temp = temp->next;
@@ -126,12 +132,12 @@ void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *sho
 {
 	if(stars)
 		print_stars(game, stars);
+	if(shoots_enemies)
+		print_shoots_enemies(game, shoots_enemies);
 	if(player)
 		print_player(game, player);
 	if(enemy_list)
 		print_monsters(game, enemy_list, cols);
-	if(shoots_enemies)
-		print_shoots_enemies(game, shoots_enemies);
 	if(shoots)
 		print_shoots(game, shoots);
 	box(game, ACS_VLINE, ACS_HLINE);

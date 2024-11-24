@@ -1,6 +1,5 @@
 Si on a le temps :
 	obstacles // 3
-	enemis speciaux // 1
 	attaques speciales // 2
 	combo multiplicateur // 2
 	menu (selec perso) // 1
