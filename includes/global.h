@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 13:23:45 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 14:55:02 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@
 
 extern int score;
 
-enum e_colors {
-	STARS = 1
-};
-
 /*****************************************************************************/
 /*                              PLAYER FUNCTION                              */
 /*****************************************************************************/
@@ -36,6 +32,7 @@ t_player	*init_player(int win_height);
 void	move_player(t_player *player, int input, int lines, int cols, WINDOW *game);
 void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY);
 void	check_enemy_player(t_list **lst_enemys, int playerX, int playerY, int *running, int *death_screen);
+void	check_enemy_shoot(t_list **lst_shoots, t_player *player, int *running, int *death_screen, WINDOW *game);
 
 
 /*****************************************************************************/

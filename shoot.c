@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:04:11 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 13:37:15 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 14:40:27 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	check_enemys_shoots(t_list *shoot, t_list **lst_enemys, t_list **frst_shoot
 		{
 			ft_lstdelone(lst_enemys, enemys);
 			enemys = NULL;
-			mvwprintw(game, shoot_el->posY, shoot_el->posX, "  ");
+			mvwprintw(game, shoot_el->posY, shoot_el->posX - 1, "  ");
 			ft_lstdelone(frst_shoot, shoot);
 			shoot = NULL;
 			score++;

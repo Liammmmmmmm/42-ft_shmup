@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:55:22 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 11:48:03 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 14:39:24 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,40 @@ void	check_enemy_player(t_list **lst_enemys, int playerX, int playerY, int *runn
 	{
 		if(enemys->content)
 			enemy = enemys->content;
+		else
+			return;
 		if(enemy->posX == playerX && enemy->posY == playerY)
-				{
-					*running = 0;
-					*death_screen = 1;
-				}
+		{
+			*running = 0;
+			*death_screen = 1;
+		}
 		enemys = enemys->next;
 	}
 	
+}
+
+void	check_enemy_shoot(t_list **lst_shoots, t_player *player, int *running, int *death_screen, WINDOW *game)
+{
+	t_list	*shoots = *lst_shoots;
+	t_shoot	*shoot = NULL;
+	
+	while(shoots)
+	{
+		if(shoots->content)
+			shoot = shoots->content;
+		else
+			return;
+		if(shoot->posX == player->posX && shoot->posY == player->posY)
+		{
+			player->pv--;
+			mvwprintw(game, shoot->posY, shoot->posX + 1, " ");
+			ft_lstdelone(lst_shoots, shoots);
+			if(player->pv == 0)
+			{
+				*running = 0;
+				*death_screen = 1;
+			}
+		}
+		shoots = shoots->next;
+	}
 }

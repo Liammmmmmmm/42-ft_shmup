@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 12:43:17 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 14:38:16 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,13 @@ int main(void) {
 
 	start_color();
 	assume_default_colors(COLOR_WHITE, COLOR_BLACK);
+
+	init_pair(1 , COLOR_RED, COLOR_BLACK);
    
 	box(game, ACS_VLINE, ACS_HLINE);
 	box(infos, ACS_VLINE, ACS_HLINE);
+
+	int caca = 0;
 	while (running)
 	{
 		input = getch();
@@ -72,14 +76,12 @@ int main(void) {
             if (input == 'q') {
                 running = 0;
             } else {
-				// mvwprintw(infos, 1, 5, "Key pressed: %c", input);
 				shoot_player(input, &first_shoots, player->posX, player->posY);
                 move_player(player, input, LINES - 5, COLS, game);
             }
         }
 
 		clock_gettime(CLOCK_MONOTONIC, &ts_now);
-        //clock_gettime(CLOCK_MONOTONIC, &ts_now);
         delta_time = (ts_now.tv_sec - ts_start.tv_sec) +
                      (ts_now.tv_nsec - ts_start.tv_nsec) / 1e9;
         ts_start = ts_now;
@@ -102,7 +104,11 @@ int main(void) {
 			/*  SPAWN STARS  */
 			t_enemy *star = init_star(LINES - 5, COLS);
 			if (star)
+			{
+				caca++;
+				ft_putnbr_fd(caca, 1);
 				ft_lstadd_back(&stars, ft_lstnew(star));
+			}
 			
 
 			enemy_spawn_timer = 0.0;
@@ -128,8 +134,6 @@ int main(void) {
 				upt_shoots_enemy(&first_enemy_shoot, COLS, game);
 				frame_counter_shoot = 0;
 			}
-
-			// UPT SHOOTS ENEMIS 
 			
 			frame_counter_enemy++;
 			if (frame_counter_enemy >= enemy_speed)
@@ -137,10 +141,8 @@ int main(void) {
 				upt_enemies(&enemy_list, game, LINES - 5, &first_enemy_shoot);
 				frame_counter_enemy = 0;
 			}
-
-			// VERIF POS JOUEUR == PROJECTILE
 			check_enemy_player(&enemy_list, player->posX, player->posY, &running, &youaredead_screen);
-			// AVOIR X% DE CHANCE QU'UN ENEMI SHOOT
+			check_enemy_shoot(&first_enemy_shoot, player, &running, &youaredead_screen, game);
         }
 
 		usleep(1000);
@@ -148,6 +150,8 @@ int main(void) {
 
 	ft_lstclear(&enemy_list, free);
 	ft_lstclear(&first_shoots, free);
+	ft_lstclear(&first_enemy_shoot, free);
+	ft_lstclear(&stars, free);
 	free(player);
 	clear();
 	
