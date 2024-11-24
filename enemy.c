@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:39:17 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 10:15:41 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_enemy		*init_enemy(int win_height, int win_length)
 	return (enemy);
 }
 
-void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game)
+void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game, int lines)
 {
 	if (!enemies)
 		return;
@@ -46,11 +46,30 @@ void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game)
 		enemies = NULL;
 	}
 	else
+	{
 		enemy_el->posX = enemy_el->posX - 1;
+		if (rand() % 10 == 0)
+		{
+			if (rand() % 2 == 0)
+			{
+				if (enemy_el->posY > 2)
+				{
+					enemy_el->posY = enemy_el->posY - 1;
+				}
+			}
+			else
+			{
+				if (enemy_el->posY < lines - 2)
+				{
+					enemy_el->posY = enemy_el->posY + 1;
+				}
+			}
+		}
+	}
 	
 }
 
-void	upt_enemies(t_list **enemies, WINDOW *game)
+void	upt_enemies(t_list **enemies, WINDOW *game, int lines)
 {
 	if (enemies && *enemies)
 	{
@@ -59,7 +78,10 @@ void	upt_enemies(t_list **enemies, WINDOW *game)
 		while(lst)
 		{
 			next = lst->next;
-			move_enemy(lst, enemies, game);
+			if (rand() % 3 == 0) // une chance sur 3 de bouger un mob
+			{
+				move_enemy(lst, enemies, game, lines);
+			}
 			lst = next;
 			
 		}

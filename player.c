@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:55:22 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:00:46 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 11:33:25 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,3 @@ void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY)
 		ft_lstadd_back(frst_shoot, ft_lstnew(shoot_el));
 	}
 }
-

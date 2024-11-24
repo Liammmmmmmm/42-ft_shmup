@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:04:11 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:12:31 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 11:18:15 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,29 @@ void	move_shoot(t_list *shoot, int cols, t_list **frst_shoot, WINDOW *game)
 		shoot_el->posX = shoot_el->posX + 1;
 	
 }
+void	check_enemys_shoots(t_list *shoot, t_list **lst_enemys, t_list **frst_shoot)
+{
+	t_list	*enemys = *lst_enemys;
+	t_enemy	*enemy = NULL;
+	if(!shoot)
+		return;
+	t_shoot *shoot_el = shoot->content;
 
-void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game)
+	while(enemys)
+	{
+		if(enemys->content)
+			enemy = enemys->content;
+		if(enemy->posX == shoot_el->posX && enemy->posY == shoot_el->posY)
+			{
+				ft_lstdelone(lst_enemys, enemys);
+				ft_lstdelone(frst_shoot, shoot);
+				score++;
+			}
+		enemys = enemys->next;
+	}
+}
+
+void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game, t_list **lst_enemys)
 {
 	if (frst_shoot && *frst_shoot)
 	{
@@ -48,7 +69,7 @@ void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game)
 			next = lst->next;
 			move_shoot(lst, cols, frst_shoot, game);
 			lst = next;
-			
+			check_enemys_shoots(lst, lst_enemys, frst_shoot);
 		}
 	}
 }
