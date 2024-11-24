@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:04:11 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 11:43:02 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 13:37:15 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ int		shoot_check(t_shoot *shoot, int cols)
 	return (0);
 }
 
-void	move_shoot(t_list *shoot, int cols, t_list **frst_shoot, WINDOW *game)
+
+int		shoot_check_enemy(t_shoot *shoot)
+{
+	if (shoot->posX >= 1)
+		return (1);
+	return (0);
+}
+
+void	move_shoot_enemy(t_list *shoot, int cols, t_list **frst_shoot, WINDOW *game)
 {
 	if (!shoot)
 		return;
@@ -33,32 +41,57 @@ void	move_shoot(t_list *shoot, int cols, t_list **frst_shoot, WINDOW *game)
 		shoot = NULL;
 	}
 	else
-		shoot_el->posX = shoot_el->posX + 1;
+		shoot_el->posX = shoot_el->posX - 1;
 	
 }
+
+int	move_shoot(t_list *shoot, int cols, t_list **frst_shoot, WINDOW *game)
+{
+	if (!shoot)
+		return 1;
+	if (!shoot->content)
+		return 1;
+	t_shoot *shoot_el = shoot->content;
+	if (shoot_check(shoot->content, cols))
+	{
+		mvwprintw(game, shoot_el->posY, shoot_el->posX, "  ");
+		ft_lstdelone(frst_shoot, shoot);
+		shoot = NULL;
+		return (1);
+	}
+	else
+		shoot_el->posX = shoot_el->posX + 1;
+	return (0);
+}
+
+
 void	check_enemys_shoots(t_list *shoot, t_list **lst_enemys, t_list **frst_shoot, WINDOW *game)
 {
-	t_list	*enemys = *lst_enemys;
-	t_enemy	*enemy = NULL;
-	if(!shoot)
+	if(!shoot || !lst_enemys || !shoot->content || !frst_shoot)
 		return;
+	t_list	*enemys = *lst_enemys;
+	t_list	*next = NULL;
+	t_enemy	*enemy = NULL;
 	t_shoot *shoot_el = shoot->content;
 
 	while(enemys)
 	{
+		next = enemys->next;
 		if(enemys->content)
 			enemy = enemys->content;
-		if(enemy->posX == shoot_el->posX && enemy->posY == shoot_el->posY)
-			{
-				ft_lstdelone(lst_enemys, enemys);
-				mvwprintw(game, shoot_el->posY, shoot_el->posX, "  ");
-				ft_lstdelone(frst_shoot, shoot);
-				score++;
-			}
-		enemys = enemys->next;
+		if((shoot_el && enemy->posX == shoot_el->posX && enemy->posY == shoot_el->posY ))
+		{
+			ft_lstdelone(lst_enemys, enemys);
+			enemys = NULL;
+			mvwprintw(game, shoot_el->posY, shoot_el->posX, "  ");
+			ft_lstdelone(frst_shoot, shoot);
+			shoot = NULL;
+			score++;
+			return ;
+		}
+		enemys = next;
 	}
 }
-
 void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game, t_list **lst_enemys)
 {
 	if (frst_shoot && *frst_shoot)
@@ -68,9 +101,25 @@ void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game, t_list **lst_enemys
 		while(lst)
 		{
 			next = lst->next;
-			move_shoot(lst, cols, frst_shoot, game);
+			if(move_shoot(lst, cols, frst_shoot, game) == 0)
+				check_enemys_shoots(lst, lst_enemys, frst_shoot, game);
 			lst = next;
-			check_enemys_shoots(lst, lst_enemys, frst_shoot, game);
+		}
+	}
+}
+
+
+void	upt_shoots_enemy(t_list **frst_shoot, int cols, WINDOW *game)
+{
+	if (frst_shoot && *frst_shoot)
+	{
+		t_list *lst = *frst_shoot;
+		t_list *next = NULL;
+		while(lst)
+		{
+			next = lst->next;
+			move_shoot_enemy(lst, cols, frst_shoot, game);
+			lst = next;
 		}
 	}
 }

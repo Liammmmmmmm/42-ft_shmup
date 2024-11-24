@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 11:50:51 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 12:43:17 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int main(void) {
 		return (show_error("Error while creating the player"), 1);
 	t_list		*enemy_list = NULL;
 	t_list		*first_shoots = NULL;
+	t_list		*first_enemy_shoot = NULL;
+	t_list		*stars = NULL;
 
 	int				running = 1;
 	int				input;
@@ -44,6 +46,7 @@ int main(void) {
 	double			delta_time = 0.0;
 	int				frame_counter_shoot = 0;
 	int				frame_counter_enemy = 0;
+	int				frame_counter_stars = 0;
 	double			enemy_spawn_timer = 0.0;
     const double	frame_time = 1.0 / 60.0;
 	double			timer = 0;
@@ -56,6 +59,9 @@ int main(void) {
     
     game = subwin(stdscr, LINES - 5, COLS, 0, 0);
 	infos = subwin(stdscr, 5, COLS, LINES - 5, 0);
+
+	start_color();
+	assume_default_colors(COLOR_WHITE, COLOR_BLACK);
    
 	box(game, ACS_VLINE, ACS_HLINE);
 	box(infos, ACS_VLINE, ACS_HLINE);
@@ -73,7 +79,7 @@ int main(void) {
         }
 
 		clock_gettime(CLOCK_MONOTONIC, &ts_now);
-        clock_gettime(CLOCK_MONOTONIC, &ts_now);
+        //clock_gettime(CLOCK_MONOTONIC, &ts_now);
         delta_time = (ts_now.tv_sec - ts_start.tv_sec) +
                      (ts_now.tv_nsec - ts_start.tv_nsec) / 1e9;
         ts_start = ts_now;
@@ -90,24 +96,36 @@ int main(void) {
 		if (enemy_spawn_timer >= enemy_speed / 3)
 		{
 			t_enemy *enemy = init_enemy(LINES - 5, COLS);
-			if (!enemy)
-				return (show_error("Error while creating the enemy"), 1);
-			ft_lstadd_back(&enemy_list, ft_lstnew(enemy));
+			if (enemy)
+				ft_lstadd_back(&enemy_list, ft_lstnew(enemy));
+
+			/*  SPAWN STARS  */
+			t_enemy *star = init_star(LINES - 5, COLS);
+			if (star)
+				ft_lstadd_back(&stars, ft_lstnew(star));
+			
+
 			enemy_spawn_timer = 0.0;
 		}
 
-		// BACKGROUND ETOILES
-
 		if (elapsed_time >= frame_time) {
-			render_game(game, player, enemy_list, first_shoots, COLS);
+			render_game(game, player, enemy_list, first_shoots, first_enemy_shoot, stars, COLS);
 			render_infos(infos, score, player, timer);
             ts_start = ts_now;
             elapsed_time = 0.0;
+
+			frame_counter_stars++;
+			if (frame_counter_stars >= enemy_speed * 4.5)
+			{
+				upt_stars(&stars, game);
+				frame_counter_stars = 0;
+			}
 
 			frame_counter_shoot++;
 			if (frame_counter_shoot >= 2)
 			{
 				upt_shoots(&first_shoots, COLS, game, &enemy_list);
+				upt_shoots_enemy(&first_enemy_shoot, COLS, game);
 				frame_counter_shoot = 0;
 			}
 
@@ -116,12 +134,11 @@ int main(void) {
 			frame_counter_enemy++;
 			if (frame_counter_enemy >= enemy_speed)
 			{
-				upt_enemies(&enemy_list, game, LINES - 5);
+				upt_enemies(&enemy_list, game, LINES - 5, &first_enemy_shoot);
 				frame_counter_enemy = 0;
-			} 		
+			}
 
 			// VERIF POS JOUEUR == PROJECTILE
-			// VERIF POS JOUEUR == MOB
 			check_enemy_player(&enemy_list, player->posX, player->posY, &running, &youaredead_screen);
 			// AVOIR X% DE CHANCE QU'UN ENEMI SHOOT
         }

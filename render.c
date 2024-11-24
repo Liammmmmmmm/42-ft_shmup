@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 10:24:19 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 12:38:04 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,54 @@ void	print_shoots(WINDOW *game, t_list *shoots)
 	}
 }
 
-void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, int cols)
+void	print_stars(WINDOW *game, t_list *stars)
 {
+	t_list *temp;
+	t_shoot *star;
+
+	if (stars == NULL)
+		return ;
+	temp = stars;
+	star = temp->content;
+	while (temp)
+	{
+		mvwprintw(game, star->posY, star->posX + 1, " ");
+		mvwprintw(game, star->posY, star->posX, "*");
+		temp = temp->next;
+		if (temp)
+			stars = temp->content;
+	}
+}
+
+void	print_shoots_enemies(WINDOW *game, t_list *shoots)
+{
+	t_list *temp;
+	t_shoot *shoot;
+
+	if (shoots == NULL)
+		return ;
+	temp = shoots;
+	shoot = temp->content;
+	while (temp)
+	{
+		mvwprintw(game, shoot->posY, shoot->posX + 1, " ");
+		mvwprintw(game, shoot->posY, shoot->posX, "☼");
+		temp = temp->next;
+		if (temp)
+			shoot = temp->content;
+	}
+}
+
+void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, t_list *shoots_enemies, t_list *stars, int cols)
+{
+	if(stars)
+		print_stars(game, stars);
 	if(player)
 		print_player(game, player);
 	if(enemy_list)
 		print_monsters(game, enemy_list, cols);
+	if(shoots_enemies)
+		print_shoots_enemies(game, shoots_enemies);
 	if(shoots)
 		print_shoots(game, shoots);
 	box(game, ACS_VLINE, ACS_HLINE);
