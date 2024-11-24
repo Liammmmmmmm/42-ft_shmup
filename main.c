@@ -6,13 +6,14 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 18:47:06 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 19:49:38 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/global.h"
 
 int	score = 0;
+int	bonus = 1;
 
 int	ft_get_n_size(int n)
 {
@@ -27,6 +28,159 @@ int	ft_get_n_size(int n)
 		n = n / 10;
 	}
 	return (nsize);
+}
+
+
+int	display_bestiary(int *running, int *skippall, WINDOW *bestiary)
+{
+	int	clignote = 0;
+	int	input;
+	int	goback = 0;
+	*running = 1;
+	
+	clear();
+	
+	while (*running)
+	{
+		clignote++;
+		box(bestiary, ACS_VLINE, ACS_HLINE);
+		mvwprintw(bestiary, 2, COLS / 2 - 52 / 2, "___.                    __  .__                     ");
+		mvwprintw(bestiary, 3, COLS / 2 - 52 / 2, "\\_ |__   ____   _______/  |_|__|____ _______ ___.__.");
+		mvwprintw(bestiary, 4, COLS / 2 - 52 / 2, " | __ \\_/ __ \\ /  ___/\\   __\\  \\__  \\_  __ <   |  |");
+		mvwprintw(bestiary, 5, COLS / 2 - 52 / 2, " | \\_\\ \\  ___/ \\___ \\  |  | |  |/ __ \\|  | \\/\\___  |");
+		mvwprintw(bestiary, 6, COLS / 2 - 52 / 2, " |___  /\\___  >____  > |__| |__(____  /__|   / ____|");
+		mvwprintw(bestiary, 7, COLS / 2 - 52 / 2, "     \\/     \\/     \\/               \\/       \\/     ");
+		
+		if (clignote == 6)
+		{
+			mvwprintw(bestiary, 12, COLS / 2 - 32 / 2, "PRESS [B] TO CLOSE THE BESTIARY");
+		}
+		else if (clignote >= 12)
+		{
+			mvwprintw(bestiary, 12, COLS / 2 - 32 / 2, "                               ");
+			clignote = 0;
+		}
+
+		mvwprintw(bestiary, 15, COLS / 2 - 66 / 2, "If everything doesn't fit in the window, just get a bigger screen.");
+		mvwprintw(bestiary, 17, COLS / 2 - 60 / 2, "╒════════╦═════════════════════════════════════════════════╕");
+		mvwprintw(bestiary, 18, COLS / 2 - 60 / 2, "│  YOU   ║ An unstoppable powerhouse of a spaceship,       │");
+		mvwprintw(bestiary, 19, COLS / 2 - 60 / 2, "│ [???]  ║ crafted for a true master like you, dominating  │");
+		mvwprintw(bestiary, 20, COLS / 2 - 60 / 2, "│  ♥♥♥   ║ the battlefield.                                │");
+		mvwprintw(bestiary, 21, COLS / 2 - 60 / 2, "╞════════╬═════════════════════════════════════════════════╡");
+		mvwprintw(bestiary, 22, COLS / 2 - 60 / 2, "│ Normy  ║ A tough but clumsy spaceship, resilient yet     │");
+		mvwprintw(bestiary, 23, COLS / 2 - 60 / 2, "│  [C]   ║ ridiculously flawed                             │");
+		mvwprintw(bestiary, 24, COLS / 2 - 60 / 2, "│  ♥♥    ║                                                 │");
+		mvwprintw(bestiary, 25, COLS / 2 - 60 / 2, "╞════════╬═════════════════════════════════════════════════╡");
+		mvwprintw(bestiary, 26, COLS / 2 - 60 / 2, "│  CLC   ║                                                 │");
+		mvwprintw(bestiary, 27, COLS / 2 - 60 / 2, "│  [E]   ║ A fragile, jittery spaceship.                   │");
+		mvwprintw(bestiary, 28, COLS / 2 - 60 / 2, "│   ♥    ║                                                 │");
+		mvwprintw(bestiary, 29, COLS / 2 - 60 / 2, "╞════════╬═════════════════════════════════════════════════╡");
+		mvwprintw(bestiary, 30, COLS / 2 - 60 / 2, "│ Eminem ║                                                 │");
+		mvwprintw(bestiary, 31, COLS / 2 - 60 / 2, "│  [<]   ║  A dumb spaceship that just keeps shooting.     │");
+		mvwprintw(bestiary, 32, COLS / 2 - 60 / 2, "│   ♥    ║                                                 │");
+		mvwprintw(bestiary, 33, COLS / 2 - 60 / 2, "╞════════╬═════════════════════════════════════════════════╡");
+		mvwprintw(bestiary, 34, COLS / 2 - 60 / 2, "│ Rusher ║ \"The unstoppable force\"                         │");
+		mvwprintw(bestiary, 35, COLS / 2 - 60 / 2, "│  [E]   ║ Rusher charges forward with relentless speed    │");
+		mvwprintw(bestiary, 36, COLS / 2 - 60 / 2, "│  ♥♥♥   ║ and power, a deadly threat if not stopped       │");
+		mvwprintw(bestiary, 37, COLS / 2 - 60 / 2, "╘════════╩═════════════════════════════════════════════════╛");
+
+
+		input = getch();
+		
+		wrefresh(bestiary);
+		usleep(100000);
+
+		if (input != ERR) {
+			if (input == 'q') {
+				*skippall = 1;
+				*running = 0;
+			}
+			else if (input == 'B' || input == 'b') {
+				*running = 0;
+				goback = 1;
+			}
+		}
+	}
+	return (goback);
+}
+
+void	display_menu(int *running, int *skippall, WINDOW *menu, char *listPerso, int *selected_char, WINDOW *bestiary)
+{
+	int	clignote = 0;
+	int	input;
+	*running = 1;
+	clear();
+	
+	while (*running)
+	{
+		clignote++;
+		box(menu, ACS_VLINE, ACS_HLINE);
+		mvwprintw(menu, 2, COLS / 2 - 81 / 2, "             _            _   _                                                  ");
+		mvwprintw(menu, 3, COLS / 2 - 81 / 2, "  __ _  __ _| | __ _  ___| |_(_) ___   _ __   _____      __  _ __   _____      __");
+		mvwprintw(menu, 4, COLS / 2 - 81 / 2, " / _` |/ _` | |/ _` |/ __| __| |/ __| | '_ \\ / _ \\ \\ /\\ / / | '_ \\ / _ \\ \\ /\\ / /");
+		mvwprintw(menu, 5, COLS / 2 - 81 / 2, "| (_| | (_| | | (_| | (__| |_| | (__  | |_) |  __/\\ V  V /  | |_) |  __/\\ V  V / ");
+		mvwprintw(menu, 6, COLS / 2 - 81 / 2, " \\__, |\\__,_|_|\\__,_|\\___|\\__|_|\\___| | .__/ \\___| \\_/\\_/   | .__/ \\___| \\_/\\_/  ");
+		mvwprintw(menu, 7, COLS / 2 - 81 / 2, " |___/                                |_|                   |_|                  ");
+		
+		if (clignote == 6)
+		{
+			mvwprintw(menu, 12, COLS / 2 - 22 / 2, "PRESS [SPACE] TO START");
+			mvwprintw(menu, 13, COLS / 2 - 31 / 2, "PRESS [B] TO OPEN THE BESTIARY");
+		}
+		else if (clignote >= 12)
+		{
+			mvwprintw(menu, 12, COLS / 2 - 22 / 2, "                      ");
+			mvwprintw(menu, 13, COLS / 2 - 31 / 2, "                              ");
+			clignote = 0;
+		}
+
+		mvwprintw(menu, 15, COLS / 2 - 23 / 2, "Select your spaceship!");
+		mvwprintw(menu, 17, COLS / 2 - 25 / 2, "   ╒═════╦═════╦═════╕   ");
+		mvwprintw(menu, 18, COLS / 2 - 25 / 2, "   │     ║     ║     │   ");
+		mvwprintw(menu, 19, COLS / 2 - 25 / 2, "<  │     ║     ║     │  >");
+		mvwprintw(menu, 20, COLS / 2 - 25 / 2, "   │     ║     ║     │   ");
+		mvwprintw(menu, 21, COLS / 2 - 25 / 2, "   ╘═════╩═════╩═════╛   ");
+		
+		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 6, "%c", listPerso[*selected_char - 1]);
+		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 12, "%c", listPerso[*selected_char]);
+		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 18, "%c", listPerso[*selected_char + 1]);
+
+		mvwprintw(menu, LINES - 3, COLS / 2 - 22 / 2, "By njooris & lilefebv");
+
+		input = getch();
+		if (input != ERR) {
+			if (input == 'q') {
+				*skippall = 1;
+				*running = 0;
+			}
+			else if (input == ' ') {
+				*running = 0;
+			}
+			else if (input == KEY_LEFT) {
+				if (*selected_char > 1)
+					(*selected_char)--;
+			}
+			else if (input == KEY_RIGHT) {
+				if (*selected_char < 7)
+					(*selected_char)++;
+			}
+			else if (input == 'B' || input == 'b') {
+				if (display_bestiary(running, skippall, bestiary) == 1)
+				{
+					clear();
+					*running = 1;
+				}
+				else
+				{
+					*skippall = 1;
+					*running = 0;
+				}
+			}
+		}
+		
+		wrefresh(menu);
+		usleep(100000);
+	}
 }
 
 int main(void) {
@@ -52,6 +206,7 @@ int main(void) {
 	WINDOW 	*infos;
 	WINDOW 	*death_screen;
 	WINDOW 	*menu;
+	WINDOW 	*bestiary;
 	
 	t_player	*player;
 	t_list		*enemy_list = NULL;
@@ -94,63 +249,10 @@ int main(void) {
 	assume_default_colors(COLOR_WHITE, COLOR_BLACK);
 	
 	menu = subwin(stdscr, LINES, COLS, 0, 0);
-	int		clignote = 0;
+	bestiary = subwin(stdscr, LINES, COLS, 0, 0);
 	char	*listPerso = " #>O@K&$ ";
 	int		selected_char = 4;
-	while (running)
-	{
-		clignote++;
-		box(menu, ACS_VLINE, ACS_HLINE);
-		mvwprintw(menu, 2, COLS / 2 - 81 / 2, "             _            _   _                                                  ");
-		mvwprintw(menu, 3, COLS / 2 - 81 / 2, "  __ _  __ _| | __ _  ___| |_(_) ___   _ __   _____      __  _ __   _____      __");
-		mvwprintw(menu, 4, COLS / 2 - 81 / 2, " / _` |/ _` | |/ _` |/ __| __| |/ __| | '_ \\ / _ \\ \\ /\\ / / | '_ \\ / _ \\ \\ /\\ / /");
-		mvwprintw(menu, 5, COLS / 2 - 81 / 2, "| (_| | (_| | | (_| | (__| |_| | (__  | |_) |  __/\\ V  V /  | |_) |  __/\\ V  V / ");
-		mvwprintw(menu, 6, COLS / 2 - 81 / 2, " \\__, |\\__,_|_|\\__,_|\\___|\\__|_|\\___| | .__/ \\___| \\_/\\_/   | .__/ \\___| \\_/\\_/  ");
-		mvwprintw(menu, 7, COLS / 2 - 81 / 2, " |___/                                |_|                   |_|                  ");
-		
-		if (clignote == 6)
-			mvwprintw(menu, 12, COLS / 2 - 22 / 2, "PRESS [SPACE] TO START");
-		else if (clignote >= 12)
-		{
-			mvwprintw(menu, 12, COLS / 2 - 22 / 2, "                      ");
-			clignote = 0;
-		}
-
-		mvwprintw(menu, 15, COLS / 2 - 23 / 2, "Select your spaceship!");
-		mvwprintw(menu, 17, COLS / 2 - 25 / 2, "   ╒═════╦═════╦═════╕   ");
-		mvwprintw(menu, 18, COLS / 2 - 25 / 2, "   │     ║     ║     │   ");
-		mvwprintw(menu, 19, COLS / 2 - 25 / 2, "<  │     ║     ║     │  >");
-		mvwprintw(menu, 20, COLS / 2 - 25 / 2, "   │     ║     ║     │   ");
-		mvwprintw(menu, 21, COLS / 2 - 25 / 2, "   ╘═════╩═════╩═════╛   ");
-		
-		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 6, "%c", listPerso[selected_char - 1]);
-		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 12, "%c", listPerso[selected_char]);
-		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 18, "%c", listPerso[selected_char + 1]);
-
-		mvwprintw(menu, LINES - 3, COLS / 2 - 22 / 2, "By njooris & lilefebv");
-
-		input = getch();
-		if (input != ERR) {
-			if (input == 'q') {
-				skippall = 1;
-				running = 0;
-			}
-			else if (input == ' ') {
-				running = 0;
-			}
-			else if (input == KEY_LEFT) {
-				if (selected_char > 1)
-					selected_char--;
-			}
-			else if (input == KEY_RIGHT) {
-				if (selected_char < 7)
-					selected_char++;
-			}
-		}
-		
-		wrefresh(menu);
-		usleep(100000);
-	}
+	display_menu(&running, &skippall, menu, listPerso, &selected_char, bestiary);
 	
 	running = 1;
 	clear();
