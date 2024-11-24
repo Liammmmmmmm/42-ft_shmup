@@ -3,3 +3,4 @@ Si on a le temps :
 	obstacles
 	enemis speciaux
 	attaques chargees
+	enlever les -g3
