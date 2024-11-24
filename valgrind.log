@@ -1,354 +1,257 @@
-==134838== Memcheck, a memory error detector
-==134838== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==134838== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==134838== Command: ./ft_shumup
-==134838== Parent PID: 63811
-==134838== 
-==134838== Invalid read of size 8
-==134838==    at 0x401F6B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb7be8 is 8 bytes inside a block of size 16 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x40264D: ft_lstdelone (ft_lstdelone_bonus.c:27)
-==134838==    by 0x401F48: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402545: ft_lstnew (ft_lstnew_bonus.c:19)
-==134838==    by 0x40163D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 4
-==134838==    at 0x401F20: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb8770 is 0 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402696: ft_lstdelone (ft_lstdelone_bonus.c:37)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 8
-==134838==    at 0x401FD2: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb87c8 is 8 bytes inside a block of size 16 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x40269F: ft_lstdelone (ft_lstdelone_bonus.c:38)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402545: ft_lstnew (ft_lstnew_bonus.c:19)
-==134838==    by 0x401B20: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 8
-==134838==    at 0x401E2B: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb87c0 is 0 bytes inside a block of size 16 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x40269F: ft_lstdelone (ft_lstdelone_bonus.c:38)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402545: ft_lstnew (ft_lstnew_bonus.c:19)
-==134838==    by 0x401B20: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 8
-==134838==    at 0x401E3E: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb87c0 is 0 bytes inside a block of size 16 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x40269F: ft_lstdelone (ft_lstdelone_bonus.c:38)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402545: ft_lstnew (ft_lstnew_bonus.c:19)
-==134838==    by 0x401B20: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 8
-==134838==    at 0x401E49: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb87c0 is 0 bytes inside a block of size 16 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x40269F: ft_lstdelone (ft_lstdelone_bonus.c:38)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402545: ft_lstnew (ft_lstnew_bonus.c:19)
-==134838==    by 0x401B20: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 4
-==134838==    at 0x401DCF: shoot_check (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401E53: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb8770 is 0 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402696: ft_lstdelone (ft_lstdelone_bonus.c:37)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 4
-==134838==    at 0x401E9D: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb8770 is 0 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402696: ft_lstdelone (ft_lstdelone_bonus.c:37)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid write of size 4
-==134838==    at 0x401EA6: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bb8770 is 0 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402696: ft_lstdelone (ft_lstdelone_bonus.c:37)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 4
-==134838==    at 0x401F33: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bc70b4 is 4 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402696: ft_lstdelone (ft_lstdelone_bonus.c:37)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 4
-==134838==    at 0x401E65: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bd3bd4 is 4 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402644: ft_lstdelone (ft_lstdelone_bonus.c:26)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== Invalid read of size 4
-==134838==    at 0x401E6C: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x401FED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Address 0x4bd3bd0 is 0 bytes inside a block of size 12 free'd
-==134838==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x402644: ft_lstdelone (ft_lstdelone_bonus.c:26)
-==134838==    by 0x401F55: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x402006: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4016E4: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==  Block was alloc'd at
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x401AE8: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838==    by 0x4014C6: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 
-==134838== HEAP SUMMARY:
-==134838==     in use at exit: 656,248 bytes in 441 blocks
-==134838==   total heap usage: 2,927 allocs, 2,486 frees, 703,965 bytes allocated
-==134838== 
-==134838== 9 bytes in 1 blocks are possibly lost in loss record 7 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x498A58E: strdup (strdup.c:42)
-==134838==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 9 bytes in 1 blocks are possibly lost in loss record 8 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x498A58E: strdup (strdup.c:42)
-==134838==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890B8E: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 9 bytes in 1 blocks are possibly lost in loss record 9 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x498A58E: strdup (strdup.c:42)
-==134838==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890BC9: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 24 bytes in 1 blocks are possibly lost in loss record 31 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==134838==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 24 bytes in 1 blocks are possibly lost in loss record 32 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==134838==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890B8E: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 24 bytes in 1 blocks are possibly lost in loss record 33 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==134838==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890BC9: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 24 bytes in 1 blocks are possibly lost in loss record 34 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==134838==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4886DB7: endwin_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x40192D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 24 bytes in 1 blocks are possibly lost in loss record 35 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==134838==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4886DB7: endwin_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x40192D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 63 bytes in 1 blocks are possibly lost in loss record 41 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x498A58E: strdup (strdup.c:42)
-==134838==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4886DB7: endwin_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x40192D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 64 bytes in 1 blocks are possibly lost in loss record 42 of 102
-==134838==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x498A58E: strdup (strdup.c:42)
-==134838==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4886DB7: endwin_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x40192D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 168 bytes in 1 blocks are possibly lost in loss record 64 of 102
-==134838==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 168 bytes in 1 blocks are possibly lost in loss record 65 of 102
-==134838==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890B8E: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 168 bytes in 1 blocks are possibly lost in loss record 66 of 102
-==134838==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x4890BC9: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4012BA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 168 bytes in 1 blocks are possibly lost in loss record 67 of 102
-==134838==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4886DB7: endwin_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x40192D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== 168 bytes in 1 blocks are possibly lost in loss record 68 of 102
-==134838==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==134838==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==134838==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x4886DB7: endwin_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==134838==    by 0x40192D: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
-==134838== 
-==134838== LEAK SUMMARY:
-==134838==    definitely lost: 0 bytes in 0 blocks
-==134838==    indirectly lost: 0 bytes in 0 blocks
-==134838==      possibly lost: 1,114 bytes in 15 blocks
-==134838==    still reachable: 655,134 bytes in 426 blocks
-==134838==         suppressed: 0 bytes in 0 blocks
-==134838== Reachable blocks (those to which a pointer was found) are not shown.
-==134838== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==134838== 
-==134838== For lists of detected and suppressed errors, rerun with: -s
-==134838== ERROR SUMMARY: 2381 errors from 27 contexts (suppressed: 0 from 0)
+==140845== Memcheck, a memory error detector
+==140845== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==140845== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==140845== Command: ./ft_shumup
+==140845== Parent PID: 63811
+==140845== 
+==140845== Invalid read of size 8
+==140845==    at 0x402061: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7be8 is 8 bytes inside a block of size 16 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x40274D: ft_lstdelone (ft_lstdelone_bonus.c:27)
+==140845==    by 0x40201C: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402645: ft_lstnew (ft_lstnew_bonus.c:19)
+==140845==    by 0x401654: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 4
+==140845==    at 0x401FF4: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e10 is 0 bytes inside a block of size 12 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402796: ft_lstdelone (ft_lstdelone_bonus.c:37)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x401B18: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 8
+==140845==    at 0x4020D2: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e68 is 8 bytes inside a block of size 16 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x40279F: ft_lstdelone (ft_lstdelone_bonus.c:38)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402645: ft_lstnew (ft_lstnew_bonus.c:19)
+==140845==    by 0x401B53: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 8
+==140845==    at 0x401EFB: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4020ED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e60 is 0 bytes inside a block of size 16 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x40279F: ft_lstdelone (ft_lstdelone_bonus.c:38)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402645: ft_lstnew (ft_lstnew_bonus.c:19)
+==140845==    by 0x401B53: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 8
+==140845==    at 0x401F0E: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4020ED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e60 is 0 bytes inside a block of size 16 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x40279F: ft_lstdelone (ft_lstdelone_bonus.c:38)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402645: ft_lstnew (ft_lstnew_bonus.c:19)
+==140845==    by 0x401B53: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 8
+==140845==    at 0x401F19: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4020ED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e60 is 0 bytes inside a block of size 16 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x40279F: ft_lstdelone (ft_lstdelone_bonus.c:38)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402645: ft_lstnew (ft_lstnew_bonus.c:19)
+==140845==    by 0x401B53: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 4
+==140845==    at 0x401E9F: shoot_check (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x401F23: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4020ED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e10 is 0 bytes inside a block of size 12 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402796: ft_lstdelone (ft_lstdelone_bonus.c:37)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x401B18: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid read of size 4
+==140845==    at 0x401F6D: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4020ED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e10 is 0 bytes inside a block of size 12 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402796: ft_lstdelone (ft_lstdelone_bonus.c:37)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x401B18: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== Invalid write of size 4
+==140845==    at 0x401F76: move_shoot (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4020ED: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Address 0x4bb7e10 is 0 bytes inside a block of size 12 free'd
+==140845==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x402796: ft_lstdelone (ft_lstdelone_bonus.c:37)
+==140845==    by 0x40204B: check_enemys_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x40210A: upt_shoots (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4016FB: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==  Block was alloc'd at
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x401B18: shoot_player (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845==    by 0x4014DD: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 
+==140845== HEAP SUMMARY:
+==140845==     in use at exit: 656,686 bytes in 437 blocks
+==140845==   total heap usage: 515 allocs, 78 frees, 670,691 bytes allocated
+==140845== 
+==140845== 9 bytes in 1 blocks are possibly lost in loss record 7 of 98
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x498A58E: strdup (strdup.c:42)
+==140845==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x4012CA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 24 bytes in 1 blocks are possibly lost in loss record 29 of 98
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x4A01F9E: tsearch (tsearch.c:337)
+==140845==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x4012CA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 24 bytes in 1 blocks are possibly lost in loss record 30 of 98
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x4A01F9E: tsearch (tsearch.c:337)
+==140845==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x401951: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 24 bytes in 1 blocks are possibly lost in loss record 31 of 98
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x4A01F9E: tsearch (tsearch.c:337)
+==140845==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x401951: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 63 bytes in 1 blocks are possibly lost in loss record 37 of 98
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x498A58E: strdup (strdup.c:42)
+==140845==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x401951: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 64 bytes in 1 blocks are possibly lost in loss record 38 of 98
+==140845==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x498A58E: strdup (strdup.c:42)
+==140845==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x401951: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 168 bytes in 1 blocks are possibly lost in loss record 60 of 98
+==140845==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x4012CA: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 168 bytes in 1 blocks are possibly lost in loss record 61 of 98
+==140845==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x401951: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== 168 bytes in 1 blocks are possibly lost in loss record 62 of 98
+==140845==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==140845==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==140845==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==140845==    by 0x401951: main (in /home/lilefebv/Documents/cursus/ft_shumup/tesetsss/ft_shumup)
+==140845== 
+==140845== LEAK SUMMARY:
+==140845==    definitely lost: 0 bytes in 0 blocks
+==140845==    indirectly lost: 0 bytes in 0 blocks
+==140845==      possibly lost: 712 bytes in 9 blocks
+==140845==    still reachable: 655,974 bytes in 428 blocks
+==140845==         suppressed: 0 bytes in 0 blocks
+==140845== Reachable blocks (those to which a pointer was found) are not shown.
+==140845== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==140845== 
+==140845== For lists of detected and suppressed errors, rerun with: -s
+==140845== ERROR SUMMARY: 20 errors from 18 contexts (suppressed: 0 from 0)

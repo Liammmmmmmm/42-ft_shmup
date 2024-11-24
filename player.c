@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:55:22 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 11:33:25 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 11:48:03 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,25 @@ void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY)
 		if (!shoot_el)
 			return ;
 		shoot_el->posY = playerY;
-		shoot_el->posX = playerX;
+		shoot_el->posX = playerX + 1;
 		ft_lstadd_back(frst_shoot, ft_lstnew(shoot_el));
 	}
+}
+void	check_enemy_player(t_list **lst_enemys, int playerX, int playerY, int *running, int *death_screen)
+{
+	t_list	*enemys = *lst_enemys;
+	t_enemy	*enemy = NULL;
+	
+	while(enemys)
+	{
+		if(enemys->content)
+			enemy = enemys->content;
+		if(enemy->posX == playerX && enemy->posY == playerY)
+				{
+					*running = 0;
+					*death_screen = 1;
+				}
+		enemys = enemys->next;
+	}
+	
 }

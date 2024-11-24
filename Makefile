@@ -6,7 +6,7 @@
 #    By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/24 08:30:37 by lilefebv          #+#    #+#              #
-#    Updated: 2024/11/24 09:11:30 by lilefebv         ###   ########lyon.fr    #
+#    Updated: 2024/11/24 11:44:43 by lilefebv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = main.c player.c enemy.c shoot.c render.c
 OBJ = $(SRC:.c=.o)
 NAME = ft_shumup
 CFLAGS = -Wall -Werror -Wextra
-LDFLAGS = -lncursesw
+LDFLAGS = -lncursesw -g3
 INCLUDES = includes
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a

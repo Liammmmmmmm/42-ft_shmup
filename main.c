@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 11:33:11 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 11:50:51 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void) {
 	nodelay(stdscr, TRUE);
 	noecho();
 	keypad(stdscr, TRUE);
+	curs_set(0);
 
 	// VERIFIER TAILLE BOX ET TOUT STOP SI TROP PETIT
 	
@@ -117,10 +118,11 @@ int main(void) {
 			{
 				upt_enemies(&enemy_list, game, LINES - 5);
 				frame_counter_enemy = 0;
-			}
+			} 		
 
 			// VERIF POS JOUEUR == PROJECTILE
 			// VERIF POS JOUEUR == MOB
+			check_enemy_player(&enemy_list, player->posX, player->posY, &running, &youaredead_screen);
 			// AVOIR X% DE CHANCE QU'UN ENEMI SHOOT
         }
 
