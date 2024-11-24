@@ -6,13 +6,28 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:31:50 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:44:02 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/global.h"
 
 int	score = 0;
+
+int	ft_get_n_size(int n)
+{
+	int	nsize;
+
+	if (n == 0)
+		return (1);
+	nsize = 0;
+	while (n > 0)
+	{
+		nsize++;
+		n = n / 10;
+	}
+	return (nsize);
+}
 
 int main(void) {
 	setlocale(LC_ALL, "en_US.UTF-8");
@@ -147,10 +162,11 @@ int main(void) {
 				frame_counter_stars = 0;
 			}
 
+			upt_shoots(&first_shoots, COLS, game, &enemy_list);
+
 			frame_counter_shoot++;
 			if (frame_counter_shoot >= 2)
 			{
-				upt_shoots(&first_shoots, COLS, game, &enemy_list);
 				upt_shoots_enemy(&first_enemy_shoot, COLS, game);
 				frame_counter_shoot = 0;
 			}
@@ -185,10 +201,12 @@ int main(void) {
 		box(death_screen, ACS_VLINE, ACS_HLINE);
 		
 		attron(COLOR_PAIR(1));
-		mvwprintw(death_screen, LINES / 2 - 2, COLS / 2 - 63 / 2, " _  _  __   _  _     __   ____  ____    ____  ____   __   ____ ");
-		mvwprintw(death_screen, LINES / 2 - 1, COLS / 2 - 63 / 2, "( \\/ )/  \\ / )( \\   / _\\ (  _ \\(  __)  (    \\(  __) / _\\ (    \\");
-		mvwprintw(death_screen, LINES / 2, COLS / 2 - 63 / 2, " )  /(  O )) \\/ (  /    \\ )   / ) _)    ) D ( ) _) /    \\ ) D (");
-		mvwprintw(death_screen, LINES / 2 + 1, COLS / 2 - 63 / 2, "(__/  \\__/ \\____/  \\_/\\_/(__\\_)(____)  (____/(____)\\_/\\_/(____/");
+		mvwprintw(death_screen, LINES / 2 - 3, COLS / 2 - 63 / 2, " _  _  __   _  _     __   ____  ____    ____  ____   __   ____ ");
+		mvwprintw(death_screen, LINES / 2 - 2, COLS / 2 - 63 / 2, "( \\/ )/  \\ / )( \\   / _\\ (  _ \\(  __)  (    \\(  __) / _\\ (    \\");
+		mvwprintw(death_screen, LINES / 2 - 1, COLS / 2 - 63 / 2, " )  /(  O )) \\/ (  /    \\ )   / ) _)    ) D ( ) _) /    \\ ) D (");
+		mvwprintw(death_screen, LINES / 2, COLS / 2 - 63 / 2, "(__/  \\__/ \\____/  \\_/\\_/(__\\_)(____)  (____/(____)\\_/\\_/(____/");
+		
+		mvwprintw(death_screen, LINES / 2 + 2, COLS / 2 - ((8 + ft_get_n_size(score)) / 2), "Score : %d", score);
 		attroff(COLOR_PAIR(1));
 		
 		wrefresh(death_screen);

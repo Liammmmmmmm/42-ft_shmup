@@ -6,14 +6,14 @@
 #    By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/24 08:30:37 by lilefebv          #+#    #+#              #
-#    Updated: 2024/11/24 12:47:07 by lilefebv         ###   ########lyon.fr    #
+#    Updated: 2024/11/24 16:53:18 by lilefebv         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 SRC = main.c player.c enemy.c shoot.c render.c stars.c
 OBJ = $(SRC:.c=.o)
-NAME = ft_shumup
+NAME = ft_shmup
 CFLAGS = -Wall -Werror -Wextra
 LDFLAGS = -lncursesw
 INCLUDES = includes

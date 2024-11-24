@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:31:21 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:48:37 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_enemy		*init_enemy(int win_height, int win_length, int timer)
 	enemy->pv = 1;
 	if(rand() % 10 == 0 && timer > 60)
 		enemy->type = 2;
+	else if(rand() % 3 == 0)
+		enemy->type = 3;
 	else
 		enemy->type = 1;
 	return (enemy);
@@ -45,7 +47,7 @@ void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game, int lines
 	t_enemy *enemy_el = enemies->content;
 	if (enemy_check(enemies->content))
 	{
-		if(enemy_el->type == 1)
+		if(enemy_el->type == 1 || enemy_el->type == 3)
 			mvwprintw(game, enemy_el->posY, enemy_el->posX, " ");
 		else if(enemy_el->type == 2)
 			mvwprintw(game, enemy_el->posY, enemy_el->posX, "   ");
@@ -55,7 +57,7 @@ void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game, int lines
 	else
 	{
 		enemy_el->posX = enemy_el->posX - 1;
-		if (enemy_el->type == 1)
+		if (enemy_el->type == 3)
 		{
 			if (rand() % 10 == 0)
 			{
@@ -91,7 +93,7 @@ void	upt_enemies(t_list **enemies, WINDOW *game, int lines , t_list **frst_shoot
 			next = lst->next;
 			if(lst->content)
 				enemy = lst->content;
-			if(enemy->type == 1)
+			if(enemy->type == 1 || enemy->type == 3)
 			{
 				if (rand() % 3 == 0) // une chance sur 3 de bouger un mob
 				{

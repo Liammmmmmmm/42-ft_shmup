@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:21:33 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:46:18 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
 	while (temp)
 	{
 		wattron(game, COLOR_PAIR(1));
-		if(enemy->type == 1)
+		if(enemy->type == 3)
 		{
 			if (enemy->posX + 1 < cols - 1)
 			{
@@ -42,13 +42,19 @@ void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
 				mvwprintw(game, enemy->posY + 1, enemy->posX + 1, " ");
 				mvwprintw(game, enemy->posY, enemy->posX + 1, " ");
 			}
-			mvwprintw(game, enemy->posY, enemy->posX, ENEMY1);	
+			mvwprintw(game, enemy->posY, enemy->posX, ENEMY3);	
 		}
 		else if (enemy->type == 2)
 		{
 			if (enemy->posX + 1 < cols - 3)
 				mvwprintw(game, enemy->posY, enemy->posX + 3, " ");
 			mvwprintw(game, enemy->posY, enemy->posX, ENEMY2);
+		}
+		else if (enemy->type == 1)
+		{
+			if (enemy->posX + 1 < cols - 1)
+				mvwprintw(game, enemy->posY, enemy->posX + 1, " ");
+			mvwprintw(game, enemy->posY, enemy->posX, ENEMY1);
 		}
 		wattroff(game, COLOR_PAIR(1));
 		temp = temp->next;

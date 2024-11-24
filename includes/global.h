@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:31:35 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:41:15 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 # include <locale.h>
 
 # define PLAYER "@"
-# define ENEMY1 "E"
+# define ENEMY1 "C"
 # define ENEMY2 "C##"
+# define ENEMY3 "E"
 
 # define STAR "☼"
 # define MUNITION_ON "●"
