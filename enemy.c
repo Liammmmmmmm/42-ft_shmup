@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:19:24 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 09:39:17 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		enemy_check(t_enemy *enemy)
 {
-	if (enemy->posX == 0)
+	if (enemy->posX <= 1)
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:28:09 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 09:38:41 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_player(WINDOW *game, t_player *player)
 	mvwprintw(game, player->posY, player->posX, ">");
 }
 
-void	print_monsters(WINDOW *game, t_list *enemy_list)
+void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
 {
 	t_list *temp;
 	t_enemy *enemy;
@@ -33,7 +33,9 @@ void	print_monsters(WINDOW *game, t_list *enemy_list)
 	enemy = temp->content;
 	while (temp)
 	{
-		mvwprintw(game, enemy->posY, enemy->posX, "G");
+		if (enemy->posX + 1 < cols - 1)
+			mvwprintw(game, enemy->posY, enemy->posX + 1, " ");
+		mvwprintw(game, enemy->posY, enemy->posX, "◆");
 		temp = temp->next;
 		if (temp)
 			enemy = temp->content;
@@ -59,12 +61,12 @@ void	print_shoots(WINDOW *game, t_list *shoots)
 	}
 }
 
-void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots)
+void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, int cols)
 {
 	if(player)
 		print_player(game, player);
 	if(enemy_list)
-		print_monsters(game, enemy_list);
+		print_monsters(game, enemy_list, cols);
 	if(shoots)
 		print_shoots(game, shoots);
 	wrefresh(game);

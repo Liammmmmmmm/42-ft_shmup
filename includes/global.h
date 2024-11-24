@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:19:34 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 09:36:26 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	upt_shoots(t_list **frst_shoot, int cols, WINDOW *game);
 /*****************************************************************************/
 
 void	show_error(char *error);
-void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots);
+void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, int cols);
 void	render_infos(WINDOW *infos, int score, t_player *player);
 
 

@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 09:19:39 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 09:36:47 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(void) {
 		}
 
 		if (elapsed_time >= frame_time) {
-			render_game(game, player, enemy_list, first_shoots);
+			render_game(game, player, enemy_list, first_shoots, COLS);
 			render_infos(infos, score, player);
             ts_start = ts_now;
             elapsed_time = 0.0;
