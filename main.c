@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:10:33 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:28:04 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,17 @@ int main(void) {
 	t_list		*first_shoots = NULL;
 	t_list		*first_enemy_shoot = NULL;
 	t_list		*stars = NULL;
+
+	int	star_amount = LINES * COLS / 300;
+	while (star_amount > 0)
+	{
+		t_enemy *star = init_star(LINES - 5, (rand() % (COLS - 4)) + 2);
+		if (star)
+		{
+			ft_lstadd_back(&stars, ft_lstnew(star));
+		}
+		star_amount--;
+	}
 
 	int				running = 1;
 	int				input;
@@ -138,7 +149,7 @@ int main(void) {
 			frame_counter_enemy++;
 			if (frame_counter_enemy >= enemy_speed)
 			{
-				upt_enemies(&enemy_list, game, LINES - 5, &first_enemy_shoot);
+				upt_enemies(&enemy_list, game, LINES - 5, &first_enemy_shoot, timer);
 				frame_counter_enemy = 0;
 			}
 			check_enemy_player(&enemy_list, player->posX, player->posY, &running, &youaredead_screen);

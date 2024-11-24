@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:06:04 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:28:55 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <unistd.h>
 # include <locale.h>
 
-# define PLAYER ">"
+# define PLAYER "@"
 # define ENEMY "E"
 # define STAR "☼"
 
@@ -45,7 +45,7 @@ void	check_enemy_shoot(t_list **lst_shoots, t_player *player, int *running, int 
 /*****************************************************************************/
 
 t_enemy		*init_enemy(int win_height, int win_length);
-void		upt_enemies(t_list **enemies, WINDOW *game, int lines , t_list **frst_shoot);
+void		upt_enemies(t_list **enemies, WINDOW *game, int lines , t_list **frst_shoot, int timer);
 void		shoot_enemy(t_list **frst_shoot, int enemyX, int enemyY);
 
 
