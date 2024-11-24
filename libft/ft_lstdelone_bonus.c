@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:42:49 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 13:14:50 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 18:32:24 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void    ft_lstdelone(t_list **first, t_list *lst)
 				current->next = lst->next;
 				free(lst->content);
 				free(lst);
-				lst = NULL;
 			}
 			current = current->next;
 		}

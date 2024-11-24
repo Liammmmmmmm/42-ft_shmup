@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 18:17:58 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 18:47:06 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,8 @@ int main(void) {
 		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 6, "%c", listPerso[selected_char - 1]);
 		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 12, "%c", listPerso[selected_char]);
 		mvwprintw(menu, 19, COLS / 2 - 25 / 2 + 18, "%c", listPerso[selected_char + 1]);
+
+		mvwprintw(menu, LINES - 3, COLS / 2 - 22 / 2, "By njooris & lilefebv");
 
 		input = getch();
 		if (input != ERR) {

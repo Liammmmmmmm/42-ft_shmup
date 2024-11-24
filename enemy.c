@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 17:46:37 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 18:42:33 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,10 @@ void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game, int lines
 	if (enemy_check(enemies->content))
 	{
 		if(enemy_el->type == 1 || enemy_el->type == 3 || enemy_el->type == 4)
-			mvwprintw(game, enemy_el->posY, enemy_el->posX, " ");
+			mvwprintw(game, enemy_el->posY, enemy_el->posX, "  ");
 		else if(enemy_el->type == 2)
-		{
-			mvwprintw(game, enemy_el->posY, enemy_el->posX, "   ");
-			ft_lstdelone(enemies_first, enemies);
-		}
+			mvwprintw(game, enemy_el->posY, enemy_el->posX, "    ");
+		ft_lstdelone(enemies_first, enemies);
 		enemies = NULL;
 	}
 	else
