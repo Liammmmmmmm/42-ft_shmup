@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:07:38 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:31:35 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	check_enemy_shoot(t_list **lst_shoots, t_player *player, int *running, int 
 /*                              ENEMY FUNCTION                               */
 /*****************************************************************************/
 
-t_enemy		*init_enemy(int win_height, int win_length);
+t_enemy		*init_enemy(int win_height, int win_length, int timer);
 void		upt_enemies(t_list **enemies, WINDOW *game, int lines , t_list **frst_shoot, int timer);
 void		shoot_enemy(t_list **frst_shoot, int enemyX, int enemyY);
 

@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 16:05:40 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:31:21 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		enemy_check(t_enemy *enemy)
 	return (0);
 }
 
-t_enemy		*init_enemy(int win_height, int win_length)
+t_enemy		*init_enemy(int win_height, int win_length, int timer)
 {
 	t_enemy *enemy;
 
@@ -29,7 +29,10 @@ t_enemy		*init_enemy(int win_height, int win_length)
 	enemy->posY = rand() % (win_height - 2) + 1;
 	enemy->posX = win_length - 2;
 	enemy->pv = 1;
-	enemy->type = 1;
+	if(rand() % 10 == 0 && timer > 60)
+		enemy->type = 2;
+	else
+		enemy->type = 1;
 	return (enemy);
 }
 
@@ -42,27 +45,33 @@ void	move_enemy(t_list *enemies, t_list **enemies_first, WINDOW *game, int lines
 	t_enemy *enemy_el = enemies->content;
 	if (enemy_check(enemies->content))
 	{
-		mvwprintw(game, enemy_el->posY, enemy_el->posX, " ");
+		if(enemy_el->type == 1)
+			mvwprintw(game, enemy_el->posY, enemy_el->posX, " ");
+		else if(enemy_el->type == 2)
+			mvwprintw(game, enemy_el->posY, enemy_el->posX, "   ");
 		ft_lstdelone(enemies_first, enemies);
 		enemies = NULL;
 	}
 	else
 	{
 		enemy_el->posX = enemy_el->posX - 1;
-		if (rand() % 10 == 0)
+		if (enemy_el->type == 1)
 		{
-			if (rand() % 2 == 0)
+			if (rand() % 10 == 0)
 			{
-				if (enemy_el->posY > 2)
+				if (rand() % 2 == 0)
 				{
-					enemy_el->posY = enemy_el->posY - 1;
+					if (enemy_el->posY > 2)
+					{
+						enemy_el->posY = enemy_el->posY - 1;
+					}
 				}
-			}
-			else
-			{
-				if (enemy_el->posY < lines - 2)
+				else
 				{
-					enemy_el->posY = enemy_el->posY + 1;
+					if (enemy_el->posY < lines - 2)
+					{
+						enemy_el->posY = enemy_el->posY + 1;
+					}
 				}
 			}
 		}

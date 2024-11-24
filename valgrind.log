@@ -1,130 +1,130 @@
-==210214== Memcheck, a memory error detector
-==210214== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==210214== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==210214== Command: ./ft_shumup
-==210214== Parent PID: 161598
-==210214== 
-==210214== 
-==210214== HEAP SUMMARY:
-==210214==     in use at exit: 843,524 bytes in 442 blocks
-==210214==   total heap usage: 612 allocs, 170 frees, 859,013 bytes allocated
-==210214== 
-==210214== 9 bytes in 1 blocks are possibly lost in loss record 7 of 97
-==210214==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x498A58E: strdup (strdup.c:42)
-==210214==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4012EA: main (main.c:19)
-==210214== 
-==210214== 24 bytes in 1 blocks are possibly lost in loss record 30 of 97
-==210214==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==210214==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4012EA: main (main.c:19)
-==210214== 
-==210214== 24 bytes in 1 blocks are possibly lost in loss record 31 of 97
-==210214==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==210214==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4015EE: main (main.c:91)
-==210214== 
-==210214== 24 bytes in 1 blocks are possibly lost in loss record 32 of 97
-==210214==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x4A01F9E: tsearch (tsearch.c:337)
-==210214==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4015EE: main (main.c:91)
-==210214== 
-==210214== 63 bytes in 1 blocks are possibly lost in loss record 38 of 97
-==210214==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x498A58E: strdup (strdup.c:42)
-==210214==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4015EE: main (main.c:91)
-==210214== 
-==210214== 64 bytes in 1 blocks are possibly lost in loss record 39 of 97
-==210214==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x498A58E: strdup (strdup.c:42)
-==210214==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4015EE: main (main.c:91)
-==210214== 
-==210214== 168 bytes in 1 blocks are possibly lost in loss record 61 of 97
-==210214==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4012EA: main (main.c:19)
-==210214== 
-==210214== 168 bytes in 1 blocks are possibly lost in loss record 62 of 97
-==210214==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4015EE: main (main.c:91)
-==210214== 
-==210214== 168 bytes in 1 blocks are possibly lost in loss record 63 of 97
-==210214==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==210214==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
-==210214==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
-==210214==    by 0x4015EE: main (main.c:91)
-==210214== 
-==210214== LEAK SUMMARY:
-==210214==    definitely lost: 0 bytes in 0 blocks
-==210214==    indirectly lost: 0 bytes in 0 blocks
-==210214==      possibly lost: 712 bytes in 9 blocks
-==210214==    still reachable: 842,812 bytes in 433 blocks
-==210214==         suppressed: 0 bytes in 0 blocks
-==210214== Reachable blocks (those to which a pointer was found) are not shown.
-==210214== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==210214== 
-==210214== For lists of detected and suppressed errors, rerun with: -s
-==210214== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 0 from 0)
+==213958== Memcheck, a memory error detector
+==213958== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==213958== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==213958== Command: ./ft_shumup
+==213958== Parent PID: 208197
+==213958== 
+==213958== 
+==213958== HEAP SUMMARY:
+==213958==     in use at exit: 656,565 bytes in 441 blocks
+==213958==   total heap usage: 2,627 allocs, 2,186 frees, 701,250 bytes allocated
+==213958== 
+==213958== 9 bytes in 1 blocks are possibly lost in loss record 7 of 99
+==213958==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x498A58E: strdup (strdup.c:42)
+==213958==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4012EA: main (main.c:19)
+==213958== 
+==213958== 24 bytes in 1 blocks are possibly lost in loss record 30 of 99
+==213958==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x4A01F9E: tsearch (tsearch.c:337)
+==213958==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4012EA: main (main.c:19)
+==213958== 
+==213958== 24 bytes in 1 blocks are possibly lost in loss record 31 of 99
+==213958==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x4A01F9E: tsearch (tsearch.c:337)
+==213958==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4015EE: main (main.c:91)
+==213958== 
+==213958== 24 bytes in 1 blocks are possibly lost in loss record 32 of 99
+==213958==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x4A01F9E: tsearch (tsearch.c:337)
+==213958==    by 0x48C3D6E: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4015EE: main (main.c:91)
+==213958== 
+==213958== 63 bytes in 1 blocks are possibly lost in loss record 38 of 99
+==213958==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x498A58E: strdup (strdup.c:42)
+==213958==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4015EE: main (main.c:91)
+==213958== 
+==213958== 64 bytes in 1 blocks are possibly lost in loss record 39 of 99
+==213958==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x498A58E: strdup (strdup.c:42)
+==213958==    by 0x48C3D54: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4015EE: main (main.c:91)
+==213958== 
+==213958== 168 bytes in 1 blocks are possibly lost in loss record 61 of 99
+==213958==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x4890B53: newterm_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48915EC: newterm (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48893AF: initscr (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4012EA: main (main.c:19)
+==213958== 
+==213958== 168 bytes in 1 blocks are possibly lost in loss record 62 of 99
+==213958==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x487DB3B: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x487FF0D: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4015EE: main (main.c:91)
+==213958== 
+==213958== 168 bytes in 1 blocks are possibly lost in loss record 63 of 99
+==213958==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213958==    by 0x48C3CCD: ??? (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x48C7098: _nc_tiparm (in /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3)
+==213958==    by 0x487DABB: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48949A0: vid_puts_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x489DC49: doupdate_sp (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x48916D7: wrefresh (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4888867: ??? (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x488928A: wgetch (in /usr/lib/x86_64-linux-gnu/libncursesw.so.6.3)
+==213958==    by 0x4015EE: main (main.c:91)
+==213958== 
+==213958== LEAK SUMMARY:
+==213958==    definitely lost: 0 bytes in 0 blocks
+==213958==    indirectly lost: 0 bytes in 0 blocks
+==213958==      possibly lost: 712 bytes in 9 blocks
+==213958==    still reachable: 655,853 bytes in 432 blocks
+==213958==         suppressed: 0 bytes in 0 blocks
+==213958== Reachable blocks (those to which a pointer was found) are not shown.
+==213958== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==213958== 
+==213958== For lists of detected and suppressed errors, rerun with: -s
+==213958== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 0 from 0)

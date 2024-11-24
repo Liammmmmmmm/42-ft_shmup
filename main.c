@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:56:33 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:31:50 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int main(void) {
 		
 		if (enemy_spawn_timer >= enemy_speed / 3)
 		{
-			t_enemy *enemy = init_enemy(LINES - 5, COLS);
+			t_enemy *enemy = init_enemy(LINES - 5, COLS, (int)timer);
 			if (enemy)
 				ft_lstadd_back(&enemy_list, ft_lstnew(enemy));
 
