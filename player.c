@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:55:22 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 14:39:24 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:09:29 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	check_enemy_shoot(t_list **lst_shoots, t_player *player, int *running, int 
 				*running = 0;
 				*death_screen = 1;
 			}
+			return ;
 		}
 		shoots = shoots->next;
 	}

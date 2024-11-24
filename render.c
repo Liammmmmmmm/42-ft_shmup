@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 14:58:20 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:05:09 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	show_error(char *error)
 
 void	print_player(WINDOW *game, t_player *player)
 {
-	mvwprintw(game, player->posY, player->posX, "@");
+	mvwprintw(game, player->posY, player->posX, PLAYER);
 }
 
 void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
@@ -40,7 +40,7 @@ void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
 			mvwprintw(game, enemy->posY + 1, enemy->posX + 1, " ");
 		}
 		wattron(game, COLOR_PAIR(1));
-		mvwprintw(game, enemy->posY, enemy->posX, "E");
+		mvwprintw(game, enemy->posY, enemy->posX, ENEMY);
 		wattroff(game, COLOR_PAIR(1));
 		temp = temp->next;
 		if (temp)
@@ -79,7 +79,7 @@ void	print_stars(WINDOW *game, t_list *stars)
 	while (temp)
 	{
 		mvwprintw(game, star->posY, star->posX + 1, " ");
-		mvwprintw(game, star->posY, star->posX, "☼");
+		mvwprintw(game, star->posY, star->posX, STAR);
 		temp = temp->next;
 		if (temp)
 			star = temp->content;
@@ -98,7 +98,9 @@ void	print_shoots_enemies(WINDOW *game, t_list *shoots)
 	while (temp)
 	{
 		mvwprintw(game, shoot->posY, shoot->posX + 1, " ");
+		wattron(game, COLOR_PAIR(1));
 		mvwprintw(game, shoot->posY, shoot->posX, "-");
+		wattroff(game, COLOR_PAIR(1));
 		temp = temp->next;
 		if (temp)
 			shoot = temp->content;

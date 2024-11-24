@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 14:55:02 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:06:04 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 # include <time.h>
 # include <unistd.h>
 # include <locale.h>
+
+# define PLAYER ">"
+# define ENEMY "E"
+# define STAR "☼"
+
 
 extern int score;
 

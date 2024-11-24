@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 14:38:16 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:10:33 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ int main(void) {
 	keypad(stdscr, TRUE);
 	curs_set(0);
 
-	// VERIFIER TAILLE BOX ET TOUT STOP SI TROP PETIT
-	
+	if (COLS < 80 || LINES < 24) {
+        endwin();
+        printf("Le terminal est trop petit. Résolution minimale requise : 80x24.\n");
+        return 1;          
+    }
 	
     WINDOW	*game;
 	WINDOW 	*infos;
@@ -68,7 +71,6 @@ int main(void) {
 	box(game, ACS_VLINE, ACS_HLINE);
 	box(infos, ACS_VLINE, ACS_HLINE);
 
-	int caca = 0;
 	while (running)
 	{
 		input = getch();
@@ -105,8 +107,6 @@ int main(void) {
 			t_enemy *star = init_star(LINES - 5, COLS);
 			if (star)
 			{
-				caca++;
-				ft_putnbr_fd(caca, 1);
 				ft_lstadd_back(&stars, ft_lstnew(star));
 			}
 			
