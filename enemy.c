@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:01:54 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:34:32 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:05:40 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_enemy		*init_enemy(int win_height, int win_length)
 	enemy->posY = rand() % (win_height - 2) + 1;
 	enemy->posX = win_length - 2;
 	enemy->pv = 1;
+	enemy->type = 1;
 	return (enemy);
 }
 
@@ -81,14 +82,21 @@ void	upt_enemies(t_list **enemies, WINDOW *game, int lines , t_list **frst_shoot
 			next = lst->next;
 			if(lst->content)
 				enemy = lst->content;
-			if (rand() % 3 == 0) // une chance sur 3 de bouger un mob
+			if(enemy->type == 1)
+			{
+				if (rand() % 3 == 0) // une chance sur 3 de bouger un mob
+				{
+					move_enemy(lst, enemies, game, lines);
+				}
+				else if (rand() % (50 + timer / 10) == 0)
+				{
+					shoot_enemy(frst_shoot, enemy->posX, enemy->posY);
+				}
+			} else if(enemy->type == 2)
 			{
 				move_enemy(lst, enemies, game, lines);
-			}
-			else if (rand() % (50 + timer / 10) == 0)
-			{
-				shoot_enemy(frst_shoot, enemy->posX, enemy->posY);
-			}
+			}	
+				
 			lst = next;
 		}
 	}

@@ -1,7 +1,8 @@
 Si on a le temps :
-	2 deplacements a la fois
-	obstacles
-	enemis speciaux
-	attaques speciales
-	combo multiplicateur
-	enlever les -g3
+	obstacles // 3
+	enemis speciaux // 1
+	attaques speciales // 2
+	combo multiplicateur // 2
+	menu (selec perso) // 1
+	dufficulte // 3
+	enlever les -g3 // 0

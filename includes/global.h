@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:31:06 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:28:55 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:07:38 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@
 # include <locale.h>
 
 # define PLAYER "@"
-# define ENEMY "E"
+# define ENEMY1 "E"
+# define ENEMY2 "C##"
+
 # define STAR "☼"
+# define MUNITION_ON "●"
+# define MUNITION_OFF "○"
 
 
 extern int score;
@@ -33,9 +37,9 @@ extern int score;
 /*                              PLAYER FUNCTION                              */
 /*****************************************************************************/
 
-t_player	*init_player(int win_height);
+t_player	*init_player(int win_height, int muni);
 void	move_player(t_player *player, int input, int lines, int cols, WINDOW *game);
-void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY);
+void	shoot_player(int input, t_list **frst_shoot, t_player *player);
 void	check_enemy_player(t_list **lst_enemys, int playerX, int playerY, int *running, int *death_screen);
 void	check_enemy_shoot(t_list **lst_shoots, t_player *player, int *running, int *death_screen, WINDOW *game);
 
@@ -66,7 +70,7 @@ void	upt_shoots_enemy(t_list **frst_shoot, int cols, WINDOW *game);
 
 void	show_error(char *error);
 void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *shoots, t_list *shoots_enemies, t_list *stars, int cols);
-void	render_infos(WINDOW *infos, int score, t_player *player, double timer);
+void	render_infos(WINDOW *infos, int score, t_player *player, double timer, int base_munition);
 
 
 

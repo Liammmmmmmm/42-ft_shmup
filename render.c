@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:05:09 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 16:06:27 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_monsters(WINDOW *game, t_list *enemy_list, int cols)
 			mvwprintw(game, enemy->posY + 1, enemy->posX + 1, " ");
 		}
 		wattron(game, COLOR_PAIR(1));
-		mvwprintw(game, enemy->posY, enemy->posX, ENEMY);
+		mvwprintw(game, enemy->posY, enemy->posX, ENEMY1);
 		wattroff(game, COLOR_PAIR(1));
 		temp = temp->next;
 		if (temp)
@@ -123,11 +123,28 @@ void	render_game(WINDOW *game, t_player *player, t_list *enemy_list, t_list *sho
 	wrefresh(game);
 }
 
-void	render_infos(WINDOW *infos, int score, t_player *player, double timer)
+void	print_munitions(WINDOW *infos, int munition_amount, int base_munitions)
+{
+	int i = 0;
+	while (i < munition_amount)
+	{
+		mvwprintw(infos, 2, 55 + i, MUNITION_ON);
+		i++;
+	}
+	while (i < base_munitions)
+	{
+		mvwprintw(infos, 2, 55 + i, MUNITION_OFF);
+		i++;
+	}
+}
+
+void	render_infos(WINDOW *infos, int score, t_player *player, double timer, int base_munition)
 {	
 	attron(A_BOLD);
     mvwprintw(infos, 2, 5, "Score %d", score);
 	mvwprintw(infos, 2, 35, "Timer %d", (int)timer);
+	print_munitions(infos, player->munitions, base_munition);
+
 	if (player->pv == 3)
 		mvwprintw(infos, 2, COLS - 9, "♥♥♥");
 	else if (player->pv == 2)

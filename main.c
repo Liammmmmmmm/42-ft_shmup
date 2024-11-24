@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:28:04 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:56:33 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,17 @@ int main(void) {
         printf("Le terminal est trop petit. Résolution minimale requise : 80x24.\n");
         return 1;          
     }
+
+	int		base_munitions = 15;
+	double	muntion_reload_delay = 1.0;
+	double	muntion_reload_timer = 0.0;
 	
     WINDOW	*game;
 	WINDOW 	*infos;
 	WINDOW 	*death_screen;
 	
 	t_player	*player;
-	player = init_player(LINES - 5);
+	player = init_player(LINES - 5, base_munitions);
 	if (!player)
 		return (show_error("Error while creating the player"), 1);
 	t_list		*enemy_list = NULL;
@@ -89,7 +93,7 @@ int main(void) {
             if (input == 'q') {
                 running = 0;
             } else {
-				shoot_player(input, &first_shoots, player->posX, player->posY);
+				shoot_player(input, &first_shoots, player);
                 move_player(player, input, LINES - 5, COLS, game);
             }
         }
@@ -103,10 +107,15 @@ int main(void) {
         timer += delta_time;
         enemy_spawn_timer += delta_time;
 
-		if (timer > 1.0)
+		if(timer - muntion_reload_timer > muntion_reload_delay)
 		{
-			enemy_speed = ENEMY_BASE_SPEED / (1 + (timer / 20));
+			if (player->munitions < base_munitions)
+				player->munitions++;
+			muntion_reload_timer = timer;
 		}
+
+		if (timer > 1.0)
+			enemy_speed = ENEMY_BASE_SPEED / (1 + (timer / 20));
 		
 		if (enemy_spawn_timer >= enemy_speed / 3)
 		{
@@ -127,7 +136,7 @@ int main(void) {
 
 		if (elapsed_time >= frame_time) {
 			render_game(game, player, enemy_list, first_shoots, first_enemy_shoot, stars, COLS);
-			render_infos(infos, score, player, timer);
+			render_infos(infos, score, player, timer, base_munitions);
             ts_start = ts_now;
             elapsed_time = 0.0;
 

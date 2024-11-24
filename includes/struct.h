@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:28:32 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 12:45:28 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:58:45 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ typedef struct s_player
 	int	posX;
 	int	posY;
 	int	pv;
+	int	munitions;
 }					t_player;
 
 typedef struct s_enemy
@@ -25,6 +26,7 @@ typedef struct s_enemy
 	int	posX;
 	int	posY;
 	int	pv;
+	int type;
 }					t_enemy;
 
 typedef struct s_shoot

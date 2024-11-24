@@ -6,13 +6,13 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:55:22 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 15:09:29 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 15:46:11 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/global.h"
 
-t_player	*init_player(int win_height)
+t_player	*init_player(int win_height, int base_munitions)
 {
 	t_player *player;
 
@@ -22,6 +22,7 @@ t_player	*init_player(int win_height)
 	player->posX = 10;
 	player->posY = win_height / 2;
 	player->pv = 3;
+	player->munitions = base_munitions;
 	return (player);
 }
 
@@ -44,16 +45,17 @@ void	move_player(t_player *player, int input, int lines, int cols, WINDOW *game)
 	}
 }
 
-void	shoot_player(int input, t_list **frst_shoot, int playerX, int playerY)
+void	shoot_player(int input, t_list **frst_shoot, t_player *player)
 {
-	if (input == ' ')
+	if (input == ' ' && player->munitions > 0)
 	{
 		t_shoot *shoot_el = malloc(sizeof(t_shoot));
 		if (!shoot_el)
 			return ;
-		shoot_el->posY = playerY;
-		shoot_el->posX = playerX + 1;
+		shoot_el->posY = player->posY;
+		shoot_el->posX = player->posX + 1;
 		ft_lstadd_back(frst_shoot, ft_lstnew(shoot_el));
+		player->munitions--;
 	}
 }
 void	check_enemy_player(t_list **lst_enemys, int playerX, int playerY, int *running, int *death_screen)
