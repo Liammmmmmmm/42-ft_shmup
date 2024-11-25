@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 09:10:17 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 18:17:40 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/24 19:54:44 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,8 @@ void	render_infos(WINDOW *infos, int score, t_player *player, double timer, int 
     mvwprintw(infos, 2, 5, "Score %d", score);
 	mvwprintw(infos, 2, 35, "Timer %d", (int)timer);
 	print_munitions(infos, player->munitions, base_munition);
-
+	mvwprintw(infos, 2, COLS - 25, "Combo x%d", bonus);
+	
 	if (player->pv == 3)
 		mvwprintw(infos, 2, COLS - 9, "♥♥♥");
 	else if (player->pv == 2)
