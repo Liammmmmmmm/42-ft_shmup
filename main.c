@@ -6,7 +6,7 @@
 /*   By: lilefebv <lilefebv@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:35:53 by lilefebv          #+#    #+#             */
-/*   Updated: 2024/11/24 19:53:58 by lilefebv         ###   ########lyon.fr   */
+/*   Updated: 2024/11/25 10:39:17 by lilefebv         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	display_bestiary(int *running, int *skippall, WINDOW *bestiary)
 		mvwprintw(bestiary, 32, COLS / 2 - 60 / 2, "│   ♥    ║                                                 │");
 		mvwprintw(bestiary, 33, COLS / 2 - 60 / 2, "╞════════╬═════════════════════════════════════════════════╡");
 		mvwprintw(bestiary, 34, COLS / 2 - 60 / 2, "│ Rusher ║ \"The unstoppable force\"                         │");
-		mvwprintw(bestiary, 35, COLS / 2 - 60 / 2, "│  [E]   ║ Rusher charges forward with relentless speed    │");
+		mvwprintw(bestiary, 35, COLS / 2 - 60 / 2, "│ [C##]  ║ Rusher charges forward with relentless speed    │");
 		mvwprintw(bestiary, 36, COLS / 2 - 60 / 2, "│  ♥♥♥   ║ and power, a deadly threat if not stopped       │");
 		mvwprintw(bestiary, 37, COLS / 2 - 60 / 2, "╘════════╩═════════════════════════════════════════════════╛");
 
